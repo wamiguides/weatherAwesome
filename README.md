@@ -1,4 +1,4 @@
 weatherAwesome
 ==============
 
-Awesome mobile responsive weather
+Awesome HTML mobile responsive weather
