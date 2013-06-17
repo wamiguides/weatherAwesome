@@ -1,0 +1,197 @@
+
+
+html {
+    background: none repeat scroll 0 0;
+		padding-bottom:0 !important;
+		margin-bottom:0 !important
+}
+
+@font-face {
+    font-family: 'MeteoconsRegular'!important;
+    src: url('http://192.168.1.205:2000/font/meteocons-webfont.eot') !important;
+    src: url('http://192.168.1.205:2000/font/meteocons-webfont.eot?#iefix') format('embedded-opentype') ,
+         url('http://192.168.1.205:2000/font/meteocons-webfont.woff') format('woff'),
+         url('http://192.168.1.205:2000/font/meteocons-webfont.ttf') format('truetype'),
+         url('http://192.168.1.205:2000/font/meteocons-webfont.svg#MeteoconsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+#bg-titolo{ display:none;}
+.font-weather {font-family: 'MeteoconsRegular';}
+
+body {
+	padding-bottom:0 !important;
+	margin-bottom:0 !important;
+    box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    position: relative;
+    min-width: 320px;
+}
+#weather-awesome [data-icon], #weather-awesome [data-icon]:before {
+	font-family: 'MeteoconsRegular' !important;
+	content: attr(data-icon) !important;
+}
+#icon_top {
+	text-align:center;
+	font-size:140px;
+	line-height:160px;
+	color:#333;
+}
+.weatherTemp {
+	text-align:center;
+	font-size:70px;
+	line-height:70px;
+	margin:10px;
+	margin-bottom:0;
+	padding-bottom:10px;
+}
+.weatherDesc {
+		text-align:center;
+		font-size:20px;
+		line-height:20px;
+}
+#main_day {
+	background:#ddd;
+}
+.day_blue #main_day, .day_blue #icon_top {
+	background:#3571a7 !important;
+	color:#fff !important;
+}
+.day_blue .list_day {
+	border-top-color:#85abcf;
+	background:#5091cb !important;
+	color:#fff !important;
+}
+.day_blue .weatherCity {color:#3571a7 !important;}
+
+.day_clear #main_day, .day_clear #icon_top {
+	background:#f5b00c !important;
+	color:#fff !important;
+}
+.day_clear .list_day {
+	border-top-color:#f6c349;
+	background:#f6ba2a !important;
+	color:#fff !important;
+}
+.day_clear .weatherCity {color:#f5b00c !important;}
+
+.day_white #main_day, .day_white #icon_top {
+	background:#d2edfe !important;
+	color:#5da8d8 !important;
+}
+.day_white .list_day {
+	border-top-color:#eef6fb;
+	background:#e2f3fd !important;
+	color:#5da8d8 !important;
+}
+.day_white .weatherCity {color:#5da8d8 !important;}
+
+
+#weather-awesome {
+	font-family:Helvetica;
+	font-weight:100;
+}
+.weatherCity {
+	display:block;
+	width:100%;
+	background:#fff;
+	color:#666;
+	padding:20px 0;
+}
+.weatherCity .city{
+	display:block;
+	font-size:30px;
+	margin-left:10px;
+	margin-top:5px;
+}
+.weatherCity .date{
+	display:block;
+	font-size:15px;
+	text-transform:uppercase;
+	margin-left:10px;
+	color:#333;
+}
+.list_day:first-child {border:0;}
+.list_day span {padding-right:10px;}
+.list_day {
+	border-top:1px solid #ddd;
+	font-size:18px;
+	line-height:40px;
+	padding-left:10px;
+	color:#333;
+	background:#eee;
+}
+.icon_top_list {
+	text-align:center;
+	font-size:35px;
+	line-height:45px;
+	color:#666;
+	padding-top:10px;
+}
+.weatherForecastRange {padding-bottom:10px ;}
+.weatherForecastRange span{
+	display:block;
+	text-align:center;
+	color:#3571a7;
+}
+.weatherLink a{
+	display:block;
+	text-decoration:none;
+	text-align:center;
+	background:#cecece;
+	line-height:50px;
+	font-size:15px;
+	text-transform:uppercase;
+	color:#333;
+}
+.weatherForecastRange span:first-child  {
+	color:#ff720b;
+	padding-bottom:5px;
+}
+.list_item:first-child  {
+	border:0;
+	margin-left:0;
+}
+.list_item {
+	width:20%;
+	float:left;
+	overflow:hidden;
+	margin-left:-1px;
+	border-left:1px solid #ddd;
+	background:#f3f3f3;
+}
+.weatherForecastDay {
+	text-align:center;
+	font-size:15px;
+	line-height:25px;
+	color:#999;
+}
+@media (max-width: 1124px) {
+	body {
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-radius: 0px;
+		
+	}
+
+
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+
+	
+}
+/* Landscape phones and down */
+@media (max-width: 640px) {
+}
+/*  phones  */
+@media (max-width: 320px) {
+
+}
