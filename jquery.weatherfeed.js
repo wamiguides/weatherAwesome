@@ -1,26 +1,6 @@
 /**
- * Plugin: jquery.zWeatherFeed
- * 
- * Version: 1.2.1
- * (c) Copyright 2011-2013, Zazar Ltd
- * 
- * Description: jQuery plugin for display of Yahoo! Weather feeds
- * 
- * History:
- * 1.2.1 - Handle invalid locations
- * 1.2.0 - Added forecast data option
- * 1.1.0 - Added user callback function
- *         New option to use WOEID identifiers
- *         New day/night CSS class for feed items
- *         Updated full forecast link to feed link location
- * 1.0.3 - Changed full forecast link to Weather Channel due to invalid Yahoo! link
-	   Add 'linktarget' option for forecast link
- * 1.0.2 - Correction to options / link
- * 1.0.1 - Added hourly caching to YQL to avoid rate limits
- *         Uses Weather Channel location ID and not Yahoo WOEID
- *         Displays day or night background images
- *
- **/
+ * from: jquery.zWeatherFeed Thanks :)
+**/
 
 (function($){
 
@@ -311,9 +291,6 @@
 						}
 						return i;
 					}
-					
-
-					
 		
 					// Add item data
 					html += '<div class="'+colorWeather(feed.item.condition.code)+'">'
@@ -322,7 +299,6 @@
 					html += '<div id="icon_top" data-icon="'+iconWeather(feed.item.condition.code)+'"></div>';
 					html += '<div class="weatherDesc">'+ feed.item.condition.text +'</div>';
 					html += '<div class="weatherTemp">'+ feed.item.condition.temp +'&deg;</div></div>';
-					
 				
 					// Add optional data
 				  html += '<div class="weatherRange list_day"><span data-icon="\'"></span> High: '+ wf.high +'&deg; Low: '+ wf.low +'&deg;</div>';
@@ -342,9 +318,42 @@
 						for (var i=0; i<wfi.length; i++) {
 							html += '<div class="list_item">';
 							html += '<div class="icon_top_list font-weather" data-icon="'+iconWeather(wfi[i].code)+'"></div>';
-							//console.log(wfi[i].code);
 							html += '<div class="weatherForecastDay">'+ wfi[i].day +'</div>';
-							//html += '<div class="weatherForecastDate">'+ wfi[i].date +'</div>';
+							html += '<div class="weatherForecastRange"><span>'+ wfi[i].high +' &deg</span> <span>'+ wfi[i].low +' &deg</span></div>';
+							html += '</div>'
+						}
+						html += '</div>'
+					}
+
+					if (options.link) html += '<div class="weatherLink"><a href="'+ feed.link +'" target="'+ options.linktarget +'" title="Read full forecast">Full forecast</a></div>';
+
+				} else {
+					var html = '<div class="weatherItem '+ row +'">';
+					html += '<div class="weatherError">City not found</div>';
+				}
+
+				html += '</div>';
+
+				// Alternate row classes
+				if (row == 'odd') { row = 'even'; } else { row = 'odd';	}
+		
+				$e.append(html);
+			};
+
+			// Get time string as date
+			var _getTimeAsDate = function(t) {
+		
+				d = new Date();
+				r = new Date(d.toDateString() +' '+ t);
+
+				return r;
+			};
+
+		});
+	};
+
+})(jQuery);
+class="weatherForecastDate">'+ wfi[i].date +'</div>';
 							//html += '<div class="weatherForecastText">'+ wfi[i].text +'</div>';
 							html += '<div class="weatherForecastRange"><span>'+ wfi[i].high +' &deg</span> <span>'+ wfi[i].low +' &deg</span></div>';
 							html += '</div>'
