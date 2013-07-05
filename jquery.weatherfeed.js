@@ -1,7 +1,3 @@
-/**
- * from: jquery.zWeatherFeed Thanks :)
-**/
-
 (function($){
 
 	$.fn.weatherfeed = function(locations, options, fn) {	
@@ -291,20 +287,23 @@
 						}
 						return i;
 					}
+					
+
+					
 		
 					// Add item data
 					html += '<div class="'+colorWeather(feed.item.condition.code)+'">'
-					html += '<div class="weatherCity"><span class="date">SUN 12 APR 12.20</span><span class="city">'+ feed.location.city +'</span></div>';
+					html += '<div class="weatherCity"><span class="date">'+ feed.item.condition.date +'</span><span class="city">'+ feed.location.city +'</span></div>';
 					html+= '<div id="main_day">';
 					html += '<div id="icon_top" data-icon="'+iconWeather(feed.item.condition.code)+'"></div>';
 					html += '<div class="weatherDesc">'+ feed.item.condition.text +'</div>';
 					html += '<div class="weatherTemp">'+ feed.item.condition.temp +'&deg;</div></div>';
+					
 				
 					// Add optional data
 				  html += '<div class="weatherRange list_day"><span data-icon="\'"></span> High: '+ wf.high +'&deg; Low: '+ wf.low +'&deg;</div>';
 					html += '<div class="weatherWind list_day"><span data-icon="F"></span> Wind: '+ wd +' '+ feed.wind.speed + feed.units.speed +'</div>';
 					html += '<div class="weatherHumidity list_day"><span data-icon="%"></span> Humidity: '+ feed.atmosphere.humidity +'%</div>';
-					//html += '<div class="weatherVisibility list_day"><span data-icon="("></span> Visibility: '+ feed.atmosphere.visibility +'</div>';
 					html += '<div class="weatherSunrise list_day"><span data-icon="A"></span> Sunrise: '+ feed.astronomy.sunrise +'</div>';
 					html += '<div class="weatherSunset list_day"><span data-icon="C"></span> Sunset: '+ feed.astronomy.sunset +'</div></div>';
 
@@ -319,41 +318,7 @@
 							html += '<div class="list_item">';
 							html += '<div class="icon_top_list font-weather" data-icon="'+iconWeather(wfi[i].code)+'"></div>';
 							html += '<div class="weatherForecastDay">'+ wfi[i].day +'</div>';
-							html += '<div class="weatherForecastRange"><span>'+ wfi[i].high +' &deg</span> <span>'+ wfi[i].low +' &deg</span></div>';
-							html += '</div>'
-						}
-						html += '</div>'
-					}
-
-					if (options.link) html += '<div class="weatherLink"><a href="'+ feed.link +'" target="'+ options.linktarget +'" title="Read full forecast">Full forecast</a></div>';
-
-				} else {
-					var html = '<div class="weatherItem '+ row +'">';
-					html += '<div class="weatherError">City not found</div>';
-				}
-
-				html += '</div>';
-
-				// Alternate row classes
-				if (row == 'odd') { row = 'even'; } else { row = 'odd';	}
-		
-				$e.append(html);
-			};
-
-			// Get time string as date
-			var _getTimeAsDate = function(t) {
-		
-				d = new Date();
-				r = new Date(d.toDateString() +' '+ t);
-
-				return r;
-			};
-
-		});
-	};
-
-})(jQuery);
-class="weatherForecastDate">'+ wfi[i].date +'</div>';
+							//html += '<div class="weatherForecastDate">'+ wfi[i].date +'</div>';
 							//html += '<div class="weatherForecastText">'+ wfi[i].text +'</div>';
 							html += '<div class="weatherForecastRange"><span>'+ wfi[i].high +' &deg</span> <span>'+ wfi[i].low +' &deg</span></div>';
 							html += '</div>'
